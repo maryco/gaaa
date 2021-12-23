@@ -1,0 +1,108 @@
+/*!***************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./assets/sass/content.scss ***!
+  \***************************************************************************************************************************************************************************/
+.gaaa-baseContainer {
+  position: absolute;
+  z-index: 100000;
+  width: 160px;
+  height: 160px;
+  cursor: pointer;
+  will-change: transform, opacity;
+}
+.gaaa-baseContainer > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes anim-caution {
+  0% {
+    filter: url(#f-noise);
+    opacity: 0.5;
+  }
+  100% {
+    filter: url(#f-baseShadow);
+    opacity: 1;
+  }
+}
+.gaaa-toast {
+  position: absolute;
+  right: 0;
+  z-index: 100000;
+  min-width: 200px;
+  padding: 0 0 0 24px;
+  color: #333;
+}
+@media screen and (max-width: 575.98px) {
+  .gaaa-toast {
+    max-width: 100%;
+  }
+}
+.gaaa-toast > ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.gaaa-toast > ul > li {
+  min-width: 200px;
+  height: 40px;
+  padding: 0 16px;
+  font-family: "Noto Sans JP", monospace;
+  font-size: 16px;
+  line-height: 2.5;
+  border: solid 1px #fff;
+  border-radius: 9px;
+  box-shadow: 0.18em 0.18em 0.8em rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: skewX(-30deg);
+}
+.gaaa-toast > ul > li > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: keep-all;
+  display: inline-block;
+  transform: skewX(30deg);
+}
+@media screen and (max-width: 575.98px) {
+  .gaaa-toast > ul {
+    flex-wrap: wrap;
+    justify-content: end;
+  }
+  .gaaa-toast > ul > li {
+    min-width: 100px;
+    font-size: 14px;
+    line-height: 2.8571428571;
+  }
+  .gaaa-toast > ul > li > span {
+    max-width: 80vw;
+  }
+}
+.gaaa-toast__item--category {
+  background-color: #beb3b8;
+}
+.gaaa-toast__item--action {
+  background-color: #e0a490;
+}
+.gaaa-toast__item--label {
+  background-color: #d1cc77;
+}
+
+@keyframes anim-slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100vw) skewX(-30deg);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(0) skewX(-30deg);
+  }
+  100% {
+    opacity: 0.8;
+    transform: skewX(-30deg);
+  }
+}
+.gaaa-toast--slideIn {
+  animation: anim-slideInRight 0.8s cubic-bezier(0.01, 0.67, 0.61, 0.46) 1;
+}

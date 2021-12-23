@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 360 260"
+  xml:space="preserve"
+>
+<defs>
+    <style type="text/css"><![CDATA[
+        @keyframes anim-caution {
+            0% { 
+                filter: url(#f-noise);
+                opacity: 0.5;
+            }
+            100% {
+                filter: url(#f-baseShadow);
+                opacity: 1;
+            }
+        }
+        #g-character {
+            filter: url(#f-baseShadow);
+            animation: anim-caution 0.25s ease-in 3;
+        }
+    ]]></style>
+    <filter id="f-noise" width="150%" height="150%">
+        <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.995"
+            numOctaves="1"
+            seed="1"
+            stitchTiles="noStitch"
+    />
+        <feComponentTransfer result="img">
+            <feFuncG type="linear" slope="0" intercept="0.5" />
+            <feFuncA type="linear" slope="0" intercept="1" />
+        </feComponentTransfer>
+        <feDisplacementMap
+            in="SourceGraphic"
+            in2="img"
+            xChannelSelector="R"
+            yChannelSelector="G"
+            scale="200"
+        >
+            <animate
+                attributeName="scale"
+                from="200"
+                to="0"
+                begin="0s"
+                dur="0.3s"
+                repeatCount="1"
+            />
+        </feDisplacementMap>
+    </filter>
+    <filter id="f-baseShadow" width="130%" height="130%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur" />
+        <feOffset dy="6" />
+        <feMerge>
+            <feMergeNode />
+            <feMergeNode in="SourceGraphic" />
+        </feMerge>
+    </filter>
+</defs>
+<g id="g-character">
+    <path
+        id="wing-left"
+        fill="#467C79"
+        d="M106.488,125.125c0.462,0.62,0.908,1.273,1.339,1.942c-3.874,9.905-8.469,11.062-8.469,11.062
+            c-26.129-27.691-24.451,1.412-24.451,1.412c-28.983-29.896-31.02-2.158-31.02-2.158c-15.478-19.927-21.646-28.742-36.043-7.338
+            C5.636,114.09,7.322,97.01,18.173,85.346c8.018-8.615,23.279-11.814,34.264-6.325c14.785,7.403,27.796,17.496,38.951,28.65
+            C96.894,113.171,101.929,119.012,106.488,125.125z"
+    />
+    <path
+        id="wing-right"
+        fill="#467C79"
+        d="M254.951,125.125c-0.462,0.62-0.908,1.273-1.339,1.942c3.874,9.905,8.469,11.062,8.469,11.062
+            c26.129-27.691,24.451,1.412,24.451,1.412c28.983-29.896,31.02-2.158,31.02-2.158c15.478-19.927,21.646-28.742,36.043-7.338
+            c2.209-15.955,0.522-33.035-10.328-44.699c-8.018-8.615-23.279-11.814-34.264-6.325c-14.785,7.403-27.796,17.496-38.951,28.65
+            C264.546,113.171,259.511,119.012,254.951,125.125z"
+    />
+    <path id="body"
+        fill="#00362E"
+        d="M180.722,191.002c-51.73,0-93.667-55.246-93.667-85.001c0-29.753,41.937-84.999,93.667-84.999h-0.004
+            c51.73,0,93.667,55.246,93.667,84.999c0,29.755-41.937,85.003-93.667,85.003L180.722,191.002z"
+    />
+    <path
+        id="eye-ball"
+        fill="#9FFFE5"
+        d="M181.72,48.002c26.59,0,59.28,14.311,70.22,32.23c-2,26.06-32.68,44.1-70.22,44.1s-68.22-18.04-70.22-44.1
+            C122.439,62.313,155.13,48.002,181.72,48.002z"
+    />
+    <circle id="eye-iris" fill="#FF652A" cx="181.721" cy="84.002" r="37.999" />
+    <circle id="eye-pupil" fill="#2454AB" cx="181.721" cy="84.002" r="25.333" />
+    <path id="eye-lid"
+        fill="#45937F"
+        d="M251.939,80.232c-10.939-17.92-43.63-32.23-70.22-32.23s-59.28,14.311-70.22,32.23
+            c-0.07-0.9-0.11-1.811-0.11-2.73c0-27.52,39.49-64.5,70.33-64.5c30.85,0,70.33,36.98,70.33,64.5
+            C252.05,78.422,252.01,79.332,251.939,80.232z"
+    >
+        <animateMotion id="anim-eye-blink" path="M0,-10 0,0 z" dur="0.5s" repeatCount="indefinite" />
+    </path>
+
+    <ellipse id="mouth" fill="#45937F" cx="181.22" cy="155.002" rx="18" ry="20" />
+    <g id="g-tooth">
+        <path fill="#FFBD81" d="M197.52,146.532l-6.55,1.97l1.52-9.09C194.62,141.312,196.359,143.742,197.52,146.532z" />
+        <path fill="#FFBD81" d="M190.97,162.502l6.16,1.85c-1.18,2.49-2.82,4.65-4.79,6.37L190.97,162.502z" />
+        <path fill="#FFBD81" d="M191,138.222l-6.03,5.28l-4.66-8.47c0.3-0.021,0.61-0.03,0.91-0.03 C184.83,135.002,188.18,136.182,191,138.222z" />
+        <path fill="#FFBD81" d="M184.97,167.502l5.39,4.72c-2.68,1.771-5.8,2.78-9.14,2.78c-0.12,0-0.25,0-0.37-0.01L184.97,167.502z" />
+        <path fill="#FFBD81" d="M179.26,135.122l-1.29,9.88l-8.11-5.51C172.479,137.112,175.72,135.542,179.26,135.122z" />
+        <path fill="#FFBD81" d="M177.97,166.002l1.16,8.86c-3.21-0.41-6.16-1.75-8.62-3.79L177.97,166.002z" />
+        <path fill="#FFBD81" d="M167.38,142.222l3.59,10.78l-7.18-2.99C164.46,147.112,165.7,144.462,167.38,142.222z" />
+        <path fill="#FFBD81" d="M170.97,158.002l-3.36,10.08c-1.609-2.07-2.85-4.51-3.59-7.18L170.97,158.002z" />
+    </g>
+    <animateMotion id="anim-floating" path="M0,0 0,40 z" dur="0.5s" repeatCount="indefinite" />
+</g>
+</svg>

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "allowJs": true,
+    "noEmitOnError": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "rootDir": ".",
+    "outDir": "dist",
+    "typeRoots": ["node_modules/@types"]
+  },
+  "exclude": ["node_modules", "public"]
+}

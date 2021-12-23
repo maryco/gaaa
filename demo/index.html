@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/reboot.css" rel="stylesheet">
+  <style type="text/css">
+    * {
+      color: #333;
+    }
+
+    .firstView {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background: #45937f;
+      text-align: center;
+    }
+
+    .firstView p {
+      margin-top: 24px;
+      padding: 0 24px;
+      font-size: 1.6rem;
+    }
+
+    .content {
+      display: flex;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .content--pv {
+      background: #e0a490;
+    }
+
+    .content--ev {
+      background: #ecff60;
+    }
+
+    .previewBox {
+      width: calc(100vw * 0.8);
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    .previewBox img {
+      width: 360px;
+      height: 360px;
+
+      @media screen and (max-width: 575.98px) {}
+    }
+
+    .previewBox__text {
+      display: flex;
+      align-self: center;
+      flex-wrap: wrap;
+      flex: 1 0;
+      padding: 0 40px;
+      font-size: 1.4rem;
+    }
+
+    @media screen and (max-width: 575.98px) {
+      .previewBox {
+        flex-wrap: wrap;
+      }
+
+      .previewBox img {
+        width: 80%;
+        height: 80%;
+      }
+
+      .previewBox__text {
+        padding: 0;
+      }
+    }
+  </style>
+  <script>
+    // Mock chrome extension module
+    var chrome = {
+      runtime: {
+        getURL(path) { return path; }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <section class="firstView">
+      <div>
+        <img src="favicon.svg">
+        <p>This is a chrome extension for debugging Google Analytics.</p>
+        <p>Shows what was sent to Google Analytics by your web browsing.</p>
+      </div>
+    </section>
+    <section class="content content--pv">
+      <div class="previewBox">
+        <img src="images/content/gaaa_pvMonster.svg">
+        <div class="previewBox__text">
+          <p>This monster will appear when "Page View" type data is sent.</p>
+        </div>
+      </div>
+    </section>
+    <section class="content content--ev">
+      <div class="previewBox">
+        <div class="previewBox__text">
+          <p>This monster will appear when "Event" type data is sent.</p>
+          <p>And notify "Category", "Action" and "Label" if sent data has.</p>
+        </div>
+        <img src="images/content/gaaa_evMonster.svg">
+      </div>
+    </section>
+    <!-- <section class="content content--reademe">
+    </section> -->
+  </div>
+  <!-- <div class="gaaa-toast" style="opacity: 1;">
+    <ul>
+      <li class="gaaa-toast__item--category" style="opacity: 1;"><span>Category</span></li>
+      <li class="gaaa-toast__item--action" style="opacity: 1;"><span>Action</span></li>
+      <li class="gaaa-toast__item--label" style="opacity: 1;"> <span>Labelあああああいいいいいいううううう</span></li>
+    </ul>
+  </div> -->
+  <script src="/js/index.js"></script>
+</body>
+
+</html>

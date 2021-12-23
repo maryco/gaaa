@@ -1,0 +1,13 @@
+[
+  {
+    "id": 2,
+    "priority": 2,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "domainType": "thirdParty",
+      "urlFilter": "https://www.google-analytics.com/collect"
+    }
+  }
+]
