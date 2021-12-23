@@ -85,7 +85,7 @@
     // Mock chrome extension module
     var chrome = {
       runtime: {
-        getURL(path) { return path; }
+        getURL(path) { return `.${path}`; }
       }
     }
   </script>
