@@ -11,7 +11,7 @@ module.exports = {
     style: path.join(__dirname, "assets/sass/content.scss"),
   },
   output: {
-    path: path.join(__dirname, "./demo/"),
+    path: path.join(__dirname, "./docs/"),
     filename: "js/[name].js",
   },
   resolve: {
@@ -60,7 +60,7 @@ module.exports = {
       patterns: [
         {
           from: ".",
-          to: "../demo",
+          to: "../docs",
           context: "assets",
           globOptions: {
             ignore: ["**/sass/**", "**/ruleset/**", "**/*/manifest.json"],
@@ -68,7 +68,7 @@ module.exports = {
         },
         {
           from: ".",
-          to: "../demo",
+          to: "../docs",
           context: "src-demo",
         }
       ],
