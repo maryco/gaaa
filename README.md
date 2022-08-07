@@ -6,7 +6,7 @@ https://maryco.github.io/gaaa/<br>
 This is a Chrome extension that gives you visibility into what is being sent to Google Analytics.
 </p>
 
-## Instration
+## Installation
 
 1. Download [archive file](https://github.com/maryco/gaaa/blob/main/releases/gaaa-0.1.0.zip.)
 1. In Chrome, select "More tools" > "Extensions" to open the extension management screen
