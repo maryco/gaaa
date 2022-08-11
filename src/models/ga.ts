@@ -20,14 +20,14 @@ type EventDetail = {
 
 export class GaBuilder {
   createFromUrl(url: string) {
-    let decoadedUrl = url;
+    let decodedUrl = url;
     try {
-      decoadedUrl = decodeURIComponent(url);
+      decodedUrl = decodeURIComponent(url);
     } catch (e) {
       console.warn(`URI decode error: ${e}`);
     }
 
-    const urlParts = decoadedUrl.split('?');
+    const urlParts = decodedUrl.split('?');
     if (urlParts.length !== 2) {
       return {
         uri: null,
