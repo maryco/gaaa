@@ -27,7 +27,7 @@ class GaMonsterHelper {
     return container;
   }
 
-  getImaageUrl(path: string): string {
+  getImageUrl(path: string): string {
     const imgSrcUrl = chrome.runtime.getURL(path);
     return `${imgSrcUrl}?${Date.now()}`;
   }
@@ -55,7 +55,7 @@ export class GaEventMonster extends GaMonsterHelper implements GaMonster {
     this.container.style.top = `${posY}px`;
 
     const imgNode = document.createElement("img");
-    imgNode.src = this.getImaageUrl(this.imagePath);
+    imgNode.src = this.getImageUrl(this.imagePath);
     this.container.appendChild(imgNode);
 
     const toPosX = document.documentElement.clientWidth + this.baseSize.width;
@@ -128,7 +128,7 @@ export class GaPvMonster extends GaMonsterHelper implements GaMonster {
     this.container.style.top = `${posY}px`;
 
     const imgNode = document.createElement("img");
-    imgNode.src = this.getImaageUrl(this.imagePath);
+    imgNode.src = this.getImageUrl(this.imagePath);
     this.container.appendChild(imgNode);
 
     const toPosX = document.documentElement.clientWidth + this.baseSize.width;

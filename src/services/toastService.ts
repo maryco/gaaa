@@ -22,7 +22,6 @@ export class ToastService {
   }
 
   animateIn(toastElm: HTMLElement) {
-    console.log('Animate Toast!');
     const items = toastElm.querySelectorAll('li');
     Object.entries(items).forEach(([idx, item]) => {
       item.classList.add('gaaa-toast--slideIn');
@@ -31,13 +30,13 @@ export class ToastService {
         item.style.opacity = '0.8';
         if (parseInt(idx) + 1 === items.length) {
           // Dismiss toast container after last item animated
-          this.animteOut(toastElm);
+          this.animateOut(toastElm);
         }
       }
     });
   }
 
-  animteOut(toastElm: HTMLElement) {
+  animateOut(toastElm: HTMLElement) {
     const keyFrames = [
       {
         transform: 'translateX(0)',
