@@ -8,7 +8,7 @@ This is a Chrome extension that gives you visibility into what is being sent to 
 
 ## Installation
 
-1. Download [archive file](https://github.com/maryco/gaaa/blob/main/releases/gaaa-0.1.0.zip.)
+1. Download [archive file](https://github.com/maryco/gaaa/tree/main/releases)
 1. In Chrome, select "More tools" > "Extensions" to open the extension management screen
 1. Turn on "Developer Mode" on the top right
 1. Click "Load unpackaged extension" and select the downloaded and unzipped directory
